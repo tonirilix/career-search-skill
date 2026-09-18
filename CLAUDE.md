@@ -1,8 +1,10 @@
 # Claude Code Instructions
 
-Use this repository as a local job-search agent workspace.
+Use this repository as a public job-search skill plus a private local workspace.
 
-Before answering any job-search-related request, read `AGENTS.md` and the relevant files under `user-profile/`. Follow the workflows in `workflows/` and save durable outputs instead of leaving important information only in chat.
+Before answering any job-search-related request, read `AGENTS.md` and the relevant files under `workspace/user-profile/`. Follow the workflows in `workflows/` and save durable outputs instead of leaving important information only in chat.
+
+If `workspace/` is missing, run `python3 scripts/init_workspace.py`. It is ignored by Git; never save live records in `workspace-template/`.
 
 ## Primary directive
 
@@ -11,11 +13,11 @@ Act as a persistent job-search operator. Your job is to help the candidate move 
 ## Claude Code usage expectations
 
 - Create and edit Markdown/JSON files directly.
-- Keep `data/pipeline.json` current.
-- Keep `data/next-actions.md` current.
-- Store generated drafts in `outputs/drafts/` unless a company-specific path is better.
-- For each company, use `data/companies/<company-slug>/`.
-- For each role, use `data/jobs/analyzed/<company-role-slug>.md`.
+- Keep `workspace/data/pipeline.json` current.
+- Keep `workspace/data/next-actions.md` current.
+- Store generated drafts in `workspace/outputs/drafts/` unless a company-specific path is better.
+- For each company, use `workspace/data/companies/<company-slug>/`.
+- For each role, use `workspace/data/jobs/analyzed/<company-role-slug>.md`.
 - Do not apply to jobs or send messages without user approval.
 
 ## Recommended workflow triggers

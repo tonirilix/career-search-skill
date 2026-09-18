@@ -16,14 +16,14 @@ Convert a pasted job description or URL into a durable role record.
 ## Output path
 
 ```text
-data/jobs/analyzed/<company>-<role>.md
+workspace/data/jobs/analyzed/<company>-<role>.md
 ```
 
 Also create or update:
 
 ```text
-data/companies/<company>/role.md
-data/companies/<company>/process.md
+workspace/data/companies/<company>/role.md
+workspace/data/companies/<company>/process.md
 ```
 
 ## Normalized fields

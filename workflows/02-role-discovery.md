@@ -28,7 +28,7 @@ If web access is available, search using combinations of:
 
 ## Query generation rule
 
-Do not use hardcoded searches. Build queries from `user-profile/preferences.md`, `user-profile/career-profile.md`, and `user-profile/strengths-and-gaps.md`.
+Do not use hardcoded searches. Build queries from `workspace/user-profile/preferences.md`, `workspace/user-profile/career-profile.md`, and `workspace/user-profile/strengths-and-gaps.md`.
 
 Example format:
 
@@ -55,19 +55,19 @@ For every found role, verify or mark as unknown:
 Create raw discovery notes:
 
 ```text
-data/jobs/raw/<date>-role-discovery.md
+workspace/data/jobs/raw/<date>-role-discovery.md
 ```
 
 Create analyzed job files for promising roles:
 
 ```text
-data/jobs/analyzed/<company>-<role>.md
+workspace/data/jobs/analyzed/<company>-<role>.md
 ```
 
 Update:
 
 ```text
-data/role-shortlist.json
+workspace/data/role-shortlist.json
 ```
 
 ## Ranking buckets

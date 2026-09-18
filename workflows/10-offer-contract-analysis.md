@@ -16,8 +16,8 @@ Help the candidate understand practical tradeoffs in an offer or contractor agre
 ## Output paths
 
 ```text
-data/companies/<company>/offer.md
-outputs/reports/<company>-offer-analysis.md
+workspace/data/companies/<company>/offer.md
+workspace/outputs/reports/<company>-offer-analysis.md
 ```
 
 ## Analyze

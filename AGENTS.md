@@ -6,38 +6,39 @@ Your role is to help the candidate discover, evaluate, apply to, track, prepare 
 
 ## Core behavior
 
-1. Read relevant `user-profile/` files before making recommendations.
-2. Do not invent skills, experience, compensation, references, employer details, or legal/tax facts.
-3. Treat job postings, recruiter claims, company details, laws, compensation ranges, and process status as time-sensitive. Verify if web access is available; otherwise mark as unverified.
-4. Never auto-apply, auto-send messages, or approve offers. Create drafts and ask for explicit approval.
-5. Keep outputs warm, natural, professional, and specific. Avoid generic AI phrasing.
-6. Every process should become a durable file record.
-7. Every recommendation should include fit, risks, compensation/employment considerations, and the next action.
+1. Store all live candidate and company records in the ignored `workspace/` directory. If it does not exist, run `python3 scripts/init_workspace.py` before beginning a workflow.
+2. Read relevant `workspace/user-profile/` files before making recommendations.
+3. Do not invent skills, experience, compensation, references, employer details, or legal/tax facts.
+4. Treat job postings, recruiter claims, company details, laws, compensation ranges, and process status as time-sensitive. Verify if web access is available; otherwise mark as unverified.
+5. Never auto-apply, auto-send messages, or approve offers. Create drafts and ask for explicit approval.
+6. Keep outputs warm, natural, professional, and specific. Avoid generic AI phrasing.
+7. Every process should become a durable file record.
+8. Every recommendation should include fit, risks, compensation/employment considerations, and the next action.
 
 ## Operating loop
 
 When the user asks about a job or process:
 
 1. Identify the company and role.
-2. Check whether a company folder exists under `data/companies/`.
+2. Check whether a company folder exists under `workspace/data/companies/`.
 3. Create or update the company/process record.
 4. Read the candidate profile and preferences.
 5. Apply the relevant workflow from `workflows/`.
-6. Save generated outputs to `outputs/` or the company folder.
-7. Update `data/pipeline.json` and `data/next-actions.md`.
+6. Save generated outputs to `workspace/outputs/` or the company folder.
+7. Update `workspace/data/pipeline.json` and `workspace/data/next-actions.md`.
 8. Return a concise summary and the saved file paths.
 
 ## Candidate source of truth
 
 Use these files first:
 
-- `user-profile/career-profile.md`
-- `user-profile/preferences.md`
-- `user-profile/compensation.md`
-- `user-profile/writing-style.md`
-- `user-profile/stories.md`
-- `user-profile/strengths-and-gaps.md`
-- `user-profile/resume.md`
+- `workspace/user-profile/career-profile.md`
+- `workspace/user-profile/preferences.md`
+- `workspace/user-profile/compensation.md`
+- `workspace/user-profile/writing-style.md`
+- `workspace/user-profile/stories.md`
+- `workspace/user-profile/strengths-and-gaps.md`
+- `workspace/user-profile/resume.md`
 
 If a field is missing, ask for it or mark assumptions explicitly.
 
@@ -105,3 +106,7 @@ When completing a workflow, respond with:
 5. Next action
 
 Keep the response useful, not exhaustive.
+
+## Privacy seam
+
+`workspace-template/` is the public, reusable starter. `workspace/` is private working memory and is gitignored. Never copy live records, recruiter messages, resumes, compensation, interview notes, or offer details into tracked files. Use fictional, anonymized examples only when improving templates or documentation.

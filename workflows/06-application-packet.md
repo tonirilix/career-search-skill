@@ -17,7 +17,7 @@ Create all materials needed to apply to a role without generic writing or false 
 ## Output folder
 
 ```text
-outputs/application-packets/<company>/
+workspace/outputs/application-packets/<company>/
 ```
 
 ## Files to create

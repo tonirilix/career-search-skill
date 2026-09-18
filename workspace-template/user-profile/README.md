@@ -1,6 +1,6 @@
 # User Profile
 
-This folder is the candidate source of truth.
+This tracked folder is the blank starter for the candidate source of truth. `scripts/init_workspace.py` copies it to the ignored `workspace/user-profile/` folder; fill only that private copy.
 
 Before running serious job-search workflows, the agent should help the user fill these files through guided intake. Do not assume the defaults, examples, or placeholders are facts about the candidate.
 

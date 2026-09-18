@@ -28,13 +28,13 @@ Prepare the candidate for a specific interview stage using company, role, candid
 ## Output path
 
 ```text
-outputs/interview-prep/<company>-<stage>.md
+workspace/outputs/interview-prep/<company>-<stage>.md
 ```
 
 Also update:
 
 ```text
-data/companies/<company>/interviews.md
+workspace/data/companies/<company>/interviews.md
 ```
 
 ## Required sections

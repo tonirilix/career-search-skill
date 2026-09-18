@@ -1,23 +1,12 @@
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+TEMPLATE = ROOT / "workspace-template"
+WORKSPACE = ROOT / "workspace"
 
-DIRS = [
-    "data/jobs/raw",
-    "data/jobs/analyzed",
-    "data/jobs/rejected",
-    "data/companies",
-    "outputs/drafts",
-    "outputs/application-packets",
-    "outputs/interview-prep",
-    "outputs/reports",
-]
-
-for rel in DIRS:
-    path = ROOT / rel
-    path.mkdir(parents=True, exist_ok=True)
-    keep = path / ".gitkeep"
-    if not keep.exists():
-        keep.write_text("", encoding="utf-8")
-
-print("Workspace folders are ready.")
+if WORKSPACE.exists():
+    print("Private workspace already exists; no files were overwritten.")
+else:
+    shutil.copytree(TEMPLATE, WORKSPACE)
+    print("Private workspace created at workspace/ (gitignored).")

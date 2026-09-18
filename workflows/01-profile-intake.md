@@ -18,7 +18,7 @@ Build a candidate source of truth that can be reused across role analysis, appli
 
 ## Process
 
-1. Read all existing files in `user-profile/`.
+1. Read all existing files in `workspace/user-profile/`.
 2. Identify missing or stale fields.
 3. Ask for only the missing information required for the current task.
 4. Update the relevant files.

@@ -6,7 +6,7 @@ This project is designed to work with agentic coding tools such as Claude Code, 
 
 The core idea is simple:
 
-- Keep the candidate profile, job pipeline, role analyses, drafts, interview prep, and offer notes as local files.
+- Keep the reusable skill in Git and the candidate profile, job pipeline, role analyses, drafts, interview prep, and offer notes in a local private workspace.
 - Give the agent strict workflows and templates so it behaves like a persistent job-search operator.
 - Preserve judgment, personalization, and continuity without requiring one giant chat thread.
 
@@ -26,15 +26,16 @@ The core idea is simple:
 ## Quick start
 
 1. Open this folder in your agent tool.
-2. Ask the agent to read `AGENTS.md`, `CLAUDE.md`, or `.claude/skills/career-pipeline-operator/SKILL.md`, depending on the tool.
-3. Run the profile intake workflow before serious job analysis.
-4. Add jobs manually, by URL, or by pasted job description.
-5. Use the workflow commands in `commands.md`.
+2. Run `python3 scripts/init_workspace.py` once. It copies `workspace-template/` to the gitignored `workspace/` directory without overwriting an existing workspace.
+3. Ask the agent to read `AGENTS.md`, `CLAUDE.md`, or `.claude/skills/career-pipeline-operator/SKILL.md`, depending on the tool.
+4. Run the profile intake workflow before serious job analysis.
+5. Add jobs manually, by URL, or by pasted job description.
+6. Use the workflow commands in `commands.md`.
 
 Suggested first prompt:
 
 ```text
-Read AGENTS.md and workflows/01-profile-intake.md. Help me fill the user-profile files from my resume and preferences. Ask me only the questions needed to make the profile useful.
+Read AGENTS.md and workflows/01-profile-intake.md. Help me fill the workspace/user-profile files from my resume and preferences. Ask me only the questions needed to make the profile useful.
 ```
 
 Example role analysis prompt:
@@ -74,9 +75,15 @@ The agent should behave like a job-search operator, not a generic chatbot. It sh
 
 - Read candidate files before generating recommendations.
 - Create or update company files after each new event.
-- Save drafts in `outputs/drafts/` or the relevant company folder.
-- Maintain `data/pipeline.json` and `data/next-actions.md`.
+- Save drafts in `workspace/outputs/drafts/` or the relevant company folder.
+- Maintain `workspace/data/pipeline.json` and `workspace/data/next-actions.md`.
 - Ask clarifying questions only when required to avoid unsafe assumptions.
+
+## Privacy and updates
+
+The tracked repository is the reusable skill. `workspace-template/` contains only blank starter records and is safe to publish. `workspace/` is a private, gitignored copy where every live candidate, role, company, interview, offer, and draft record belongs.
+
+To take improvements from the skill, pull or merge the public repository as usual. Existing `workspace/` files are untouched. When a new template field is useful, add it deliberately to the matching private file; do not re-run initialization over an active workspace. See [PRIVACY.md](PRIVACY.md) for the publishing and migration checklist.
 
 ## Folder map
 
@@ -86,11 +93,10 @@ job-search-operator-skill/
   CLAUDE.md                         # Claude Code entrypoint instructions
   commands.md                       # Command-style workflow triggers
   file-conventions.md               # Naming and persistence rules
-  user-profile/                     # Candidate source of truth
   workflows/                        # Step-by-step operating procedures
   templates/                        # Reusable output templates
-  data/                             # Pipeline, companies, job records
-  outputs/                          # Generated drafts and reports
+  workspace-template/               # Tracked, blank private-workspace starter
+  workspace/                        # Ignored live candidate and company records
   scripts/                          # Optional helpers for local maintenance
   .claude/skills/.../SKILL.md       # Claude-style skill wrapper
 ```
@@ -108,12 +114,12 @@ These files map directly to future product entities:
 
 | File-based object | Future app module |
 |---|---|
-| `user-profile/*` | Candidate profile |
-| `data/jobs/*` | Role feed and fit ranking |
-| `data/companies/*` | Pipeline CRM |
-| `outputs/application-packets/*` | Application workspace |
-| `data/companies/*/interviews.md` | Interview prep |
-| `data/companies/*/offer.md` | Offer analysis |
-| `data/next-actions.md` | Home dashboard |
+| `workspace/user-profile/*` | Candidate profile |
+| `workspace/data/jobs/*` | Role feed and fit ranking |
+| `workspace/data/companies/*` | Pipeline CRM |
+| `workspace/outputs/application-packets/*` | Application workspace |
+| `workspace/data/companies/*/interviews.md` | Interview prep |
+| `workspace/data/companies/*/offer.md` | Offer analysis |
+| `workspace/data/next-actions.md` | Home dashboard |
 
 This means you can prototype the intelligence and workflows now, then build a real UI later.

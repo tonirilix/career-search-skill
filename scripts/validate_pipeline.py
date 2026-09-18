@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PIPELINE = ROOT / "data" / "pipeline.json"
+PIPELINE = ROOT / "workspace" / "data" / "pipeline.json"
 
 REQUIRED = {
     "company",
@@ -37,6 +37,10 @@ VALID_STATUSES = {
 
 
 def main():
+    if not PIPELINE.exists():
+        print("Private workspace missing. Run: python3 scripts/init_workspace.py")
+        raise SystemExit(1)
+
     data = json.loads(PIPELINE.read_text(encoding="utf-8"))
     opportunities = data.get("opportunities", [])
     errors = []

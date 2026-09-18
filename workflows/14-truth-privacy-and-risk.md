@@ -15,10 +15,13 @@ Protect candidate trust and avoid harmful automation.
 
 ## Privacy rules
 
+- Write live records only under the gitignored `workspace/` directory. `workspace-template/` is a public-safe starter, not working memory.
 - Keep sensitive data local by default.
 - Do not expose references, compensation history, contracts, or recruiter messages externally without approval.
 - Redact personal contact data from examples unless needed.
 - Do not send emails, submit forms, or upload documents without explicit approval.
+
+Before publishing changes, review staged files and confirm `workspace/` is ignored. See `PRIVACY.md` for the full checklist.
 
 ## Risk labels
 

@@ -29,7 +29,7 @@ Run when:
 ## Output
 
 - Update files directly.
-- Create `outputs/reports/memory-maintenance-<date>.md` summarizing changes.
+- Create `workspace/outputs/reports/memory-maintenance-<date>.md` summarizing changes.
 
 ## Rule
 

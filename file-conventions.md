@@ -21,7 +21,7 @@ Use ISO dates in filenames:
 Every active company should have:
 
 ```text
-data/companies/<company>/
+workspace/data/companies/<company>/
   process.md
   role.md
   recruiter-messages.md
@@ -44,7 +44,7 @@ Optional:
 Use:
 
 ```text
-data/jobs/analyzed/<company>-<role-slug>.md
+workspace/data/jobs/analyzed/<company>-<role-slug>.md
 ```
 
 ## Application packets
@@ -52,7 +52,7 @@ data/jobs/analyzed/<company>-<role-slug>.md
 Use:
 
 ```text
-outputs/application-packets/<company>/
+workspace/outputs/application-packets/<company>/
   cover-letter.md
   form-answers.md
   positioning-notes.md
@@ -64,14 +64,14 @@ outputs/application-packets/<company>/
 Use:
 
 ```text
-outputs/drafts/<date>-<company>-<purpose>.md
+workspace/outputs/drafts/<date>-<company>-<purpose>.md
 ```
 
 Examples:
 
 ```text
-outputs/drafts/2026-09-09-sezzle-pto-clarification.md
-outputs/drafts/2026-09-09-eden-ceo-thank-you.md
+workspace/outputs/drafts/2026-09-09-sezzle-pto-clarification.md
+workspace/outputs/drafts/2026-09-09-eden-ceo-thank-you.md
 ```
 
 ## Status values
