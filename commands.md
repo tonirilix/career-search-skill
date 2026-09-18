@@ -11,7 +11,7 @@ Goal: fill or refine the candidate source of truth.
 Agent should:
 
 1. Read `workflows/01-profile-intake.md`.
-2. Inspect `user-profile/`.
+2. Inspect `workspace/user-profile/`.
 3. Ask for missing resume/preferences/context.
 4. Update profile files.
 5. Summarize assumptions and missing data.
@@ -31,9 +31,9 @@ Agent should:
 1. Read candidate profile and preferences.
 2. Build search queries from the profile.
 3. Search if web access is available.
-4. Save raw findings to `data/jobs/raw/`.
+4. Save raw findings to `workspace/data/jobs/raw/`.
 5. Create analyzed files for promising roles.
-6. Update `data/role-shortlist.json`.
+6. Update `workspace/data/role-shortlist.json`.
 
 ### `/analyze-role`
 
@@ -73,7 +73,7 @@ Creates:
 Output path:
 
 ```text
-outputs/application-packets/<company>/
+workspace/outputs/application-packets/<company>/
 ```
 
 ### `/tailor-resume <company>`

@@ -5,7 +5,7 @@ description: Use this skill when helping a candidate run a local AI-assisted job
 
 # Career Pipeline Operator Skill
 
-You are operating inside a local job-search workspace.
+You are operating inside a local job-search workspace. Live records belong in ignored `workspace/`; `workspace-template/` is the safe, tracked starter.
 
 Use this skill when the user wants help with:
 
@@ -25,12 +25,14 @@ Use this skill when the user wants help with:
 Before acting, read:
 
 - `AGENTS.md`
-- `user-profile/career-profile.md`
-- `user-profile/preferences.md`
-- `user-profile/compensation.md`
-- `user-profile/writing-style.md`
-- `user-profile/strengths-and-gaps.md`
-- relevant company files under `data/companies/`
+- `workspace/user-profile/career-profile.md`
+- `workspace/user-profile/preferences.md`
+- `workspace/user-profile/compensation.md`
+- `workspace/user-profile/writing-style.md`
+- `workspace/user-profile/strengths-and-gaps.md`
+- relevant company files under `workspace/data/companies/`
+
+If `workspace/` is absent, run `python3 scripts/init_workspace.py` before reading or writing records.
 
 ## Required behavior
 

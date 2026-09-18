@@ -33,7 +33,7 @@ Help the candidate make a clear decision between active opportunities.
 ## Output path
 
 ```text
-outputs/reports/decision-memo-<date>.md
+workspace/outputs/reports/decision-memo-<date>.md
 ```
 
 ## Output structure

@@ -33,7 +33,7 @@ Answer:
 Save to:
 
 ```text
-data/companies/<company>/company-research.md
+workspace/data/companies/<company>/company-research.md
 ```
 
 ## Verification rules

@@ -32,7 +32,7 @@ Draft natural, professional recruiter messages that move the process forward wit
 ## Output path
 
 ```text
-outputs/drafts/<date>-<company>-<purpose>.md
+workspace/outputs/drafts/<date>-<company>-<purpose>.md
 ```
 
 ## Tone rules

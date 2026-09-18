@@ -6,7 +6,7 @@ Create a concise operating review of the job search.
 
 ## Inputs
 
-- `data/pipeline.json`
+- `workspace/data/pipeline.json`
 - company process files
 - next actions
 - recent drafts
@@ -15,13 +15,13 @@ Create a concise operating review of the job search.
 ## Output path
 
 ```text
-outputs/reports/weekly-review-<date>.md
+workspace/outputs/reports/weekly-review-<date>.md
 ```
 
 Update:
 
 ```text
-data/next-actions.md
+workspace/data/next-actions.md
 ```
 
 ## Sections

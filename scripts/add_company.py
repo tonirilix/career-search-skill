@@ -3,8 +3,9 @@ from pathlib import Path
 from datetime import date
 
 ROOT = Path(__file__).resolve().parents[1]
-TEMPLATE_DIR = ROOT / "data" / "companies" / "_template"
-COMPANIES_DIR = ROOT / "data" / "companies"
+WORKSPACE = ROOT / "workspace"
+TEMPLATE_DIR = WORKSPACE / "data" / "companies" / "_template"
+COMPANIES_DIR = WORKSPACE / "data" / "companies"
 
 
 def slugify(value: str) -> str:
@@ -12,8 +13,12 @@ def slugify(value: str) -> str:
 
 
 def main():
+    if not WORKSPACE.exists():
+        print("Private workspace missing. Run: python3 scripts/init_workspace.py")
+        raise SystemExit(1)
+
     if len(sys.argv) < 2:
-        print('Usage: python scripts/add_company.py <company> [role title]')
+        print('Usage: python3 scripts/add_company.py <company> [role title]')
         raise SystemExit(1)
 
     company = sys.argv[1]

@@ -1,5 +1,9 @@
 .DS_Store
 
+# Private job-search records. Bootstrap this ignored directory with
+# `python3 scripts/init_workspace.py`; commit only workspace-template/.
+/workspace/
+
 # Editor and local tool state
 .idea/
 .vscode/

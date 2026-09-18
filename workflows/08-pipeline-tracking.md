@@ -6,9 +6,9 @@ Keep an accurate local CRM for the candidate's job search.
 
 ## Files
 
-- `data/pipeline.json`
-- `data/next-actions.md`
-- `data/companies/<company>/process.md`
+- `workspace/data/pipeline.json`
+- `workspace/data/next-actions.md`
+- `workspace/data/companies/<company>/process.md`
 
 ## When to update
 
